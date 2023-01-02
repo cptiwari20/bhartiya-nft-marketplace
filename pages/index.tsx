@@ -1,20 +1,8 @@
 import Head from 'next/head'
-import { Inter } from '@next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import BaseLayout from '../components/Layout'
 
 export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Bhartiya NFT Marketplace</title>
-        <meta name="description" content="One and only Indian NFT marketplace" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={'none'}>
-          NFT Marketplace
-      </main>
-    </>
-  )
+  return <BaseLayout>
+      <h1>Hello to NFTs!!</h1>
+  </BaseLayout>
 }
