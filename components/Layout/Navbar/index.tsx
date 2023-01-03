@@ -1,19 +1,19 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import ActiveLink from '../ActiveLink'
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'NFTs', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'About', href: '#', current: false },
+  { name: 'Marketplace', href: '/', current: true },
+  { name: 'Create', href: '/nft/create', current: false },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: String[]) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Navbar() {
+  
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -47,17 +47,17 @@ export default function Navbar() {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <ActiveLink
                         key={item.name}
                         href={item.href}
-                        className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        activeClassName={'bg-gray-900 text-white'}
+                        className={classNames('text-gray-300 hover:bg-gray-700 hover:text-white',
                           'px-3 py-2 rounded-md text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </ActiveLink>
                     ))}
                   </div>
                 </div>
@@ -96,14 +96,14 @@ export default function Navbar() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="/user/profile"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Your Profile
                           </a>
                         )}
                       </Menu.Item>
-                      <Menu.Item>
+                      {/* <Menu.Item>
                         {({ active }) => (
                           <a
                             href="#"
@@ -112,7 +112,7 @@ export default function Navbar() {
                             Settings
                           </a>
                         )}
-                      </Menu.Item>
+                      </Menu.Item> */}
                       <Menu.Item>
                         {({ active }) => (
                           <a

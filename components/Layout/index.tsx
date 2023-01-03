@@ -1,10 +1,12 @@
 import { AppProps } from "next/app"
 import { Head } from "next/document"
-import { FunctionComponent } from "react"
+import { FunctionComponent, ReactElement } from "react"
 import Navbar from "./Navbar"
 
-
-const BaseLayout: FunctionComponent = ({ children }) => {
+type BaseLayoutProps = {
+    children: any
+}
+const BaseLayout: FunctionComponent<BaseLayoutProps> = ({ children }) => {
     return <>
     <Navbar />
     <div className="py-16 overflow-hidden min-h-screen bg-gray-50">
