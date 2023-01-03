@@ -4,7 +4,7 @@ import { FunctionComponent, ReactElement } from "react"
 import Navbar from "./Navbar"
 
 type BaseLayoutProps = {
-    children: any
+    children: ReactElement
 }
 const BaseLayout: FunctionComponent<BaseLayoutProps> = ({ children }) => {
     return <>
