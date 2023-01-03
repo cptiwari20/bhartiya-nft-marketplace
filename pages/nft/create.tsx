@@ -16,7 +16,7 @@ const NftCreate: NextPage = () => {
           <div className="py-4">
             { !nftURI &&
               <div className="flex">
-                <div className="mr-2 font-bold underline">Do you have meta data already?</div>
+                <div className="mr-2 font-bold underline text-slate-900">Do you have meta data already?</div>
                 <Switch
                   checked={hasURI}
                   onChange={() => setHasURI(!hasURI)}
