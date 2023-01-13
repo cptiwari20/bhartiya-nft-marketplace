@@ -1,7 +1,7 @@
 const NftMarket = artifacts.require("NFTMarket");
 
 module.exports = function (deployer) {
-    const contractName = "NFTMarket"
+    // const contractName = "NFTMarket"
     deployer.deploy(NftMarket)
     
     
