@@ -1,4 +1,4 @@
-const NftMarket = artifacts.require("NFTMarket");
+const NftMarket = artifacts.require("NftMarket");
 
 module.exports = function (deployer) {
     // const contractName = "NFTMarket"
