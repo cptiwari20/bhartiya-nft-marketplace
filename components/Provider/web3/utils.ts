@@ -34,7 +34,7 @@ export async function loadContract(name:string, provider: providers.Web3Provider
         const data = await fetch(`/contracts/${name}.json`)
         const Artifact = await data.json();
 
-        if(Artifact.contracts[NetworkId].address){
+        if(Artifact.networks[NetworkId].address){
             return new ethers.Contract(
                 Artifact.networks[NetworkId].address,
                 Artifact.abi,
